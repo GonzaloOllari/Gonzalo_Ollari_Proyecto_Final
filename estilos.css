@@ -1,0 +1,534 @@
+/* ===== VARIABLES DE COLOR ===== */
+:root {
+  --fondo: #141517;
+  --panel: #1d1e21;
+  --panel2: #26272b;
+  --linea: #34363b;
+  --tinta: #e8e8ea;
+  --gris: #9a9ca3;
+  --azul: #2e6bb0;
+  --azul2: #7fb0e3;
+  --ok: #6fbf8b;
+  --mal: #e57d75;
+  --aviso: #d8a94a;
+}
+
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.55 Roboto,system-ui,sans-serif;
+  color: var(--tinta);
+  background: var(--fondo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Roboto Condensed',Roboto,sans-serif;
+  line-height: 1.1;
+  margin: 0 0 .6rem;
+  color: #fff;
+}
+
+h1 {
+  font-size: clamp(2.3rem,6vw,3.8rem);
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--azul2);
+}
+
+/* ===== ESTRUCTURA Y MENÚ SUPERIOR ===== */
+.wrap {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 1.1rem;
+}
+
+main.wrap {
+  flex: 1;
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.top {
+  background: var(--panel);
+  border-bottom: 1px solid var(--linea);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+}
+
+.marca {
+  font: 700 1.35rem 'Roboto Condensed',sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+
+.marca::before {
+  content: "";
+  display: inline-block;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  background: var(--azul);
+  margin-right: .55rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.1rem;
+  align-items: center;
+}
+
+nav a {
+  color: var(--gris);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* ===== BOTONES ===== */
+.btn,
+button {
+  background: var(--azul);
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: .7rem 1.25rem;
+  font: 600 1rem Roboto,sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover,
+button:hover {
+  background: #255a96;
+}
+
+nav a.btn {
+  color: #fff;
+}
+
+.btn.chico {
+  padding: .35rem .9rem;
+  box-shadow: none;
+}
+
+.btn.sec {
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--azul2);
+  box-shadow: none;
+}
+
+.btn.sec:hover {
+  background: rgba(127,176,227,.12);
+}
+
+:focus-visible {
+  outline: 3px solid var(--azul2);
+  outline-offset: 2px;
+}
+
+/* ===== PORTADA (INICIO) ===== */
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: end;
+  padding: 2rem 0 2.2rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 34rem;
+  color: #cfd0d4;
+}
+
+.hero .acciones {
+  display: flex;
+  gap: .7rem;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+}
+
+.ficha {
+  background: var(--panel2);
+  border: 1px solid var(--linea);
+  padding: 1.3rem;
+  border-radius: 6px;
+}
+
+.ficha h3 {
+  color: #fff;
+}
+
+.ficha p {
+  margin: .25rem 0;
+  color: #cfd0d4;
+}
+
+/* ===== PANELES Y FORMULARIOS ===== */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 6px;
+  padding: 1.4rem;
+  margin-bottom: 1.3rem;
+}
+
+.grid2 {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+form.f {
+  display: grid;
+  gap: .9rem;
+}
+
+form.f .dos {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+label {
+  font-weight: 500;
+  font-size: .92rem;
+  display: block;
+  margin-bottom: .25rem;
+  color: #cfd0d4;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: .7rem .8rem;
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  font: inherit;
+  background: var(--fondo);
+  color: #fff;
+  color-scheme: dark;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--azul);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(127,176,227,.35);
+}
+
+::placeholder {
+  color: #7a7c83;
+}
+
+.ayuda {
+  color: var(--gris);
+  font-size: .9rem;
+  margin: .25rem 0 0;
+}
+
+.msg {
+  padding: .75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.msg.ok {
+  background: rgba(111,191,139,.12);
+  color: var(--ok);
+  border: 1px solid rgba(111,191,139,.35);
+}
+
+.msg.error {
+  background: rgba(229,125,117,.12);
+  color: var(--mal);
+  border: 1px solid rgba(229,125,117,.35);
+}
+
+/* ===== TABLAS Y ETIQUETAS DE ESTADO ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: .65rem .5rem;
+  border-bottom: 1px solid var(--linea);
+  vertical-align: top;
+}
+
+th {
+  font: 600 .9rem 'Roboto Condensed',sans-serif;
+  color: var(--azul2);
+}
+
+small {
+  color: var(--gris);
+}
+
+.tabla {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--linea) var(--fondo);
+}
+
+td form {
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+}
+
+td select,
+td input {
+  padding: .35rem;
+  width: auto;
+}
+
+td button {
+  padding: .35rem .8rem;
+  box-shadow: none;
+}
+
+.etq {
+  display: inline-block;
+  padding: .1rem .6rem;
+  border-radius: 99px;
+  background: var(--panel2);
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--gris);
+}
+
+.etq.confirmado,
+.etq.listo,
+.etq.realizado {
+  background: rgba(111,191,139,.14);
+  color: var(--ok);
+}
+
+.etq.cancelado {
+  background: rgba(229,125,117,.14);
+  color: var(--mal);
+}
+
+.etq.pendiente {
+  background: rgba(216,169,74,.14);
+  color: var(--aviso);
+}
+
+/* ===== SEGUIMIENTO DEL VEHÍCULO ===== */
+.pasos {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin: .8rem 0;
+}
+
+.paso {
+  padding: .4rem .8rem;
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  color: var(--gris);
+  font-weight: 500;
+}
+
+.paso.hecho {
+  border-color: var(--azul);
+  color: var(--azul2);
+}
+
+.paso.actual {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: #fff;
+}
+
+/* ===== MAPA ===== */
+.mapa {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 6px;
+  filter: invert(.9) hue-rotate(180deg) saturate(.4);
+}
+
+/* ===== PIE DE PÁGINA Y COMPROBANTE ===== */
+.pie {
+  border-top: 1px solid var(--linea);
+  color: var(--gris);
+  padding: 1.2rem 0;
+  font-size: .9rem;
+}
+
+.comprobante {
+  max-width: 640px;
+  margin: 2rem auto;
+  background: var(--panel);
+  border: 1px solid var(--azul);
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.comprobante dl {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: .5rem;
+}
+
+.comprobante dt {
+  font-weight: 600;
+  color: var(--azul2);
+}
+
+.comprobante dd {
+  margin: 0;
+}
+
+/* ===== TURNOS EN EL PANEL DE ADMINISTRACIÓN ===== */
+.turno {
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: .8rem;
+}
+
+.turno-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.turno-info > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.rotulo {
+  display: block;
+  color: var(--azul2);
+  font: 600 .8rem 'Roboto Condensed',sans-serif;
+  text-transform: uppercase;
+  margin-bottom: .2rem;
+}
+
+.turno-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .8rem 1.5rem;
+  margin-top: .9rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--linea);
+}
+
+.turno-acciones form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem;
+}
+
+.turno-acciones select,
+.turno-acciones input {
+  width: auto;
+  padding: .4rem;
+}
+
+.turno-acciones button {
+  padding: .4rem .9rem;
+  box-shadow: none;
+}
+
+/* ===== AVISOS ===== */
+.aviso {
+  background: var(--panel2);
+  border-left: 4px solid var(--azul);
+  padding: .7rem 1rem;
+  margin: 0;
+}
+
+/* ===== ADAPTACIÓN A CELULARES ===== */
+@media(max-width:760px) {
+  .turno-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero,
+  .grid2,
+  form.f .dos {
+    grid-template-columns: 1fr;
+  }
+
+  .burbuja {
+    max-width: 92%;
+  }
+}
+
+/* ===== IMPRESIÓN ===== */
+@media print {
+  .no-print,
+  .top,
+  .pie {
+    display: none!important;
+  }
+
+  body,
+  .comprobante {
+    background: #fff!important;
+    color: #000!important;
+  }
+
+  .comprobante {
+    border: 1px solid #000;
+    margin: 0;
+  }
+
+  .comprobante h2,
+  .comprobante dt {
+    color: #000!important;
+  }
+}

@@ -1,0 +1,9 @@
+INSTALACIÓN EN XAMPP
+1. Copiá la carpeta "taller_mecanico" dentro de C:\xampp\htdocs\
+2. Abrí XAMPP y encendé Apache y MySQL.
+3. Entrá a http://localhost/phpmyadmin, pestaña "SQL", pegá el contenido de taller_mecanico.sql y tocá "Continuar".
+4. Abrí http://localhost/taller_mecanico/
+5. Admin: admin@taller.com / Admin1234  (cambiala cuando termines de probar)
+
+Si tu MySQL tiene contraseña, editá usuario y clave en conexion.php.
+Datos del taller (dirección, teléfono, horarios) están arriba en conexion.php.
